@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from store.models import Product, Category
+from store.models import Category, Product
 
 # Register your models here.
 
@@ -13,6 +13,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_per_page = 5
     ordering = ['id']
     list_filter = ['price']
+
 
 admin.site.register(Category)
 # admin.site.register(Product, ProductAdmin)

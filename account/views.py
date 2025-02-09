@@ -33,7 +33,6 @@ def register(request):
     return render(request, 'account/register.html', context=context)
 
 
-
 def login(request):
 
     if request.user.is_authenticated:
@@ -67,9 +66,5 @@ def logout(request):
     return redirect('login')
 
 
-
 def testview(request):
     return render(request, 'test.html', {})
-
-
-

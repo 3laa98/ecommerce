@@ -1,10 +1,12 @@
 from django.contrib.auth.decorators import login_required
-from django.http import HttpResponse
-from django.shortcuts import get_object_or_404, render, redirect
 from django.core.paginator import Paginator
+from django.http import HttpResponse
+from django.shortcuts import get_object_or_404, redirect, render
 from django.views.decorators.http import require_POST
-from store.models import Product
+
 from store.forms import ProductForm
+from store.models import Product
+
 # Create your views here.
 
 
@@ -15,7 +17,7 @@ def store(request):
 
     # page_number = request.GET.get("page")
     # page_obj = paginator.get_page(page_number)
-    context={'my_products': products}
+    context = {'my_products': products}
     return render(request, 'store/store.html', context=context)
 
 
@@ -35,7 +37,6 @@ def add_product(request):
             print(form.errors)
     else:
         form = ProductForm()
-        
+
     context = {'form': form}
     return render(request, 'store/add_product.html', context=context)
-

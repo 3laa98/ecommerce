@@ -30,9 +30,6 @@ urlpatterns = [
     path('', include('account.urls')),
     path('', include('store.urls')),
     path('test/', views.testview, name='test'),
-    
-
-
 ]
 
 urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
